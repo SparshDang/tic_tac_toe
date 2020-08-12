@@ -1,0 +1,87 @@
+<logic>:		
+	BoxLayout:	
+		size_hint: (1, 0.1)
+		pos_hint: {'x':0.5 - (text.width/(root.width*2)), 'y':0.9}
+		MDRectangleFlatButton:
+			id: text
+			text: 'TIC-TAC-TOE'
+			font_size: root.width/10
+		
+	BoxLayout:
+		id: grid
+		size_hint: (None,None)
+		width: root.width
+		height:root.width
+		pos_hint: {'x':0, 'y': 0.45 - (root.width/root.height)/2}
+		GridLayout:
+			id: mainlayout
+			size_hint: (1,1)
+			cols: 3
+			Button:
+				text: ''
+				font_size: root.width/3
+				height: root.width/3
+			
+				on_press: root.click_(self, 1)
+			Button:
+				text: ''
+				height: root.width/3
+				font_size: root.width/3
+				on_press: root.click_(self,2)
+			Button:
+				text: ''
+				height: root.width/3
+				font_size: root.width/3
+
+			
+				on_press: root.click_(self,3)
+			Button:
+				text: ''
+				on_press: root.click_(self,4)
+				font_size: root.width/3
+				height: root.width/3
+		
+			Button:
+				text: ''
+				on_press: root.click_(self,5)
+				font_size: root.width/3
+				height: root.width/3
+			
+			Button:
+				text: ''
+				height: root.width/3
+				on_press: root.click_(self,6)
+				font_size: root.width/3
+			
+			Button:
+				text: ''
+				height: root.width/3
+				on_press: root.click_(self, 7)
+				font_size: root.width/3
+			
+			Button:
+				text: ''
+				height: root.width/3
+				on_press: root.click_(self, 8)
+				font_size: root.width/3
+			
+			Button:
+				text: ''
+				height: root.width/3
+				on_press: root.click_(self, 9)
+				font_size: root.width/3
+			
+		
+	BoxLayout:
+		pos_hint: {'x':0.5 - (reset.width/(root.width*2)), 'y':0}
+		size_hint: (None, None)
+		height: root.height/10 
+		width: root.width
+		MDRectangleFlatButton:
+			id: reset
+			text: 'Reset'
+			pos_hint:{'y':0.5, 'x':0}
+			font_size: root.width/10
+			#pos: (1200,1000)	
+			on_press: root.reset() 
+			
